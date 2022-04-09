@@ -65,12 +65,12 @@ Now I'm in `Out`.I will use:
 - station_el.cat: station lo la el
 
 I will add `evla evlo evdp stlo stla stel` to the head file which will automatically calculate `dist`
-and change naming format of the sac files to be `eventtime.station.*.sac`.
+and change naming format of the sac files to be `eventtime.station.LHZ.sac`.
 
 `bash sac_ch_rename.sh`
 
 Now sac files will change from `XX.station.00.XXZ.X.eventtime.sac`
-to `eventtime.station.XXZ.sac`.And `dist` will appear in head file.
+to `eventtime.station.LHZ.sac`.And `dist` will appear in head file.
 
 At this point, my data preparation is basically complete.
 ## 01.bash
