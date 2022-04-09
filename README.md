@@ -20,12 +20,13 @@ My first-hand data is in `.miniseed` format.
 ### Preprocessing
 Use `'sac'` to process and finally get only Z component, filtered 20-150s, 1Hz `.sac` data.
 ### Cut by event
-I need to cut data by events from 30$\degree$ to 120$\degree$ and only need data within 3 hours after the earthquakes.
+I need to cut data by events from 30&deg; to 120&deg; and only need data within 3 hours after the earthquakes.
 
-1. I download event catalog from [Search Earthquake Catalog](https://earthquake.usgs.gov/earthquakes/search/).
+1. I download event catalog from 
+[Search Earthquake Catalog](https://earthquake.usgs.gov/earthquakes/search/).
 
 - Basic Options: 
-  - Magnitude Minimum: 5.5
+   - Magnitude Minimum: 5.5
 
 - Advanced Options:
   - Circle:
@@ -35,12 +36,12 @@ I need to cut data by events from 30$\degree$ to 120$\degree$ and only need data
   - Event Type:
     - earthquakes: Earthquake
   - Output Options: CSV
-
-So I get 120$\degree$ and 30$\degree$ event files in format `.csv` .
+  
+  So I get 120&deg; and 30&deg; event files in format `.csv` .
 
 2. I use Python to treat the two event files. Code in `evt.ipynb`.
 
-Then I will get 3 files:
+  Then I will get 3 files:
   - event.cat: This will be used to cut event. Format is:
 
     `2021/12/30,13:13:17`
@@ -83,6 +84,6 @@ Prepare files:
 
 `bash 01.bash`
 
-## 01.bash
+## 02.bash
 
 ---
