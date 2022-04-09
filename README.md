@@ -86,4 +86,13 @@ Prepare files:
 
 ## 02.bash
 
+When I run `02.bash` I unfortunately find that
+
+the Z component name in sac file must be "LHZ".
+
+Then I modify the sac name.
+
+And I should adjust parameters otherwise `snr_err` will appear.
+
+
 ---

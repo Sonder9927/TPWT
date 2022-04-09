@@ -1,6 +1,8 @@
 # batch_sacfile_rename.py
 # created: 6th April 2022
 
+# Last modification: Z component in sac name must be "LHZ"
+
 '''
 This will batch rename a group of sac files in given directory,
 
@@ -10,12 +12,12 @@ From
 TE.BD259.00.HHZ.D.202201011051.sac
 
 To
-20220011051.BD201.HHZ.sac
+20220011051.BD201.LHZ.sac
 '''
 
 # just checking
 _author_ = 'Sonder M. W.'
-_version_ = '1.0.2'
+_version_ = '1.0.3'
 
 from icecream import ic
 import argparse
@@ -27,8 +29,7 @@ def batch_sac_rename(work_dir):
         if os.path.splitext(filename)[1] == ".sac":
             ic(filename)
             namesplits = filename.split('.')
-            new_namelist = [namesplits[i] for i in [1, 3, 6]]
-            new_namelist.insert(0, work_dir)
+            new_namelist = [work_dir, namesplits[1], "LHZ", namesplits[6]]
             new_name = ".".join(new_namelist)
             os.rename(work_dir+"/"+filename, work_dir+"/"+new_name)
             ic("sucess rename")
