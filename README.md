@@ -214,6 +214,15 @@ repeat 04, chose pham.V3
 ---
 
 ## final result
-The final result is 2 `grd.` file in `new_2d`, `.ave` is perturbation.
-## draw
-I will create some python scripts with "pygmt" soon, according to the gmt scripts.
+The final result is 2 `grd.*` files in `new_2d`, `.ave` is perturbation.
+
+And there are two `std*` files representing standard deviation in the `new_2d`.
+## plot
+There are some python scripts using `pygmt` to plot `grid.*.ave`.
+
+Learning more about [pygmt](https://www.pygmt.org/latest/).
+
+Files used in the script:
+- grid.*
+- station.lst
+- some data
