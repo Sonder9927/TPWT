@@ -143,15 +143,14 @@ def dp_plot(per, region):
     dp_std()
 
     # save figure
-    fig.savefig(f"grid{per}.pdf")
+    fig.savefig(f"dp/fig/grid{per}.pdf")
 
 def shanghai():
     region = [118, 123, 29, 32]
 
-    # period figure
-    per = [20, 25, 30]
-    for i in per:
-        dp_plot(i, region)
+    # period figur
+    for per in os.listdir("dp"):
+        dp_plot(per, region)
 
 if __name__ == "__main__":
     shanghai()
