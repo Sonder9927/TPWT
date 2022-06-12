@@ -1,6 +1,6 @@
 # author: sonder
 # created: 11 June 2022
-# version: 1.0
+# version: 1.0.1
 import pygmt
 from icecream import ic
 import os
@@ -15,7 +15,7 @@ def make_gra(region, TOPO_GRA):
     TOPO_GRD = 'dp/topo.grd'
     TOPO_GRD2 = 'dp/topo.grd2'
 
-    pygmt.grdcut(data="dp/ETOPO1.grd", region=region, outgrid=TOPO_GRD)
+    pygmt.grdcut(grid="dp/ETOPO1.grd", region=region, outgrid=TOPO_GRD)
     pygmt.grdsample(grid=TOPO_GRD, outgrid=TOPO_GRD2, spacing="0.01", region=region)
     pygmt.grdgradient(grid=TOPO_GRD2, azimuth=45, outgrid=TOPO_GRA, normalize="t", verbose="")
 
@@ -24,10 +24,10 @@ def average(file):
     read the velocity and calculate the average value
     return avevel and title
     '''
-    df = pd.read_csv(file, sep="\s+", header=None, name=["la", "lo", "vel"], engine="python")
+    df = pd.read_csv(file, sep="\s+", header=None, names=["la", "lo", "vel"], engine="python")
     avevel = df["vel"].sum() / len(df)
     # format title. The process needs to be improved with regularization in the future
-    title = "%s vel=%5.4f" % (file[13:], avevel)
+    title = "%s vel=%5.4f" % (os.path.basename(file), avevel)
     return avevel, title
 
 def dp_title_and_tmpgrd(per, region):
